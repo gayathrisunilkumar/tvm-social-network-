@@ -1,0 +1,17 @@
+{
+  "name": "gayathri",
+  "version": "1.0.0",
+  "description": "",
+  "main": "a.js",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "nedb": "^1.8.0"
+  },
+ 
+  "scripts": {
+    "start" : "node tvm.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
