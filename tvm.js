@@ -160,7 +160,7 @@ app.get('/home',function(req,res){
 })  */
 
 
-app.get('/profile/:name',function(req,res){
+/*  app.get('/profile/:name',function(req,res){
 
 	req.params.name;
 db.find({username:a},function(err,result){
@@ -173,7 +173,7 @@ else{
 	res.send('no user found with'+a)
 }
 })
-})
+})  */
 
 
 
