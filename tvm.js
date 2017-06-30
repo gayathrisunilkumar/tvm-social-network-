@@ -43,12 +43,14 @@ app.get('/signup', function (req,res)
 app.get('/loginSubmit',function(req,res){
 var emai=req.query.Email;
 	var pass=req.query.Password;
+	
+
           var person={
          "email":emai,
 	     "password":pass
                      }
  db.find(person,function(err,result){
- 	console.log(result);
+ //	console.log(result);
  
 
 
@@ -79,20 +81,7 @@ else{
 //lets see from here
 
 
-  app.get('/profile/:name',function(req,res){
-
-	var a=req.params.name;
-db.find({user_name:a},function(err,result){
-
-	console.log(result);
-if(result.length!=0){
-	res.render('profile',{res:result})
-                    }
-else{
-	res.send('no user found with'+a)
-}
-})
-})  
+ 
 
 
 
@@ -146,7 +135,7 @@ app.get('/signupSubmit',function(req,res)
 /* insert to database */
 db.insert(perso,function(err,result){
 
-	console.log(result);
+//	console.log(result);
 	res.send("success inserted");
                                     })
 
@@ -156,6 +145,20 @@ db.insert(perso,function(err,result){
 
 	res.send("signup success");
 	
+	 app.get('/profile/:name',function(req,res){
+
+	var a=req.params.name;
+db.find({user_name:a},function(err,result){
+
+	console.log(result);
+if(result.length!=0){
+	res.render('profile',{res:result})
+                    }
+else{
+	res.send('no user found with'+a)
+}
+})
+})  
 
 }) 
 
