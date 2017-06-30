@@ -41,8 +41,8 @@ app.get('/signup', function (req,res)
 
 
 app.get('/loginSubmit',function(req,res){
-var emai=req.query.email;
-	var pass=req.query.password;
+var emai=req.query.Email;
+	var pass=req.query.Password;
           var person={
          "email":emai,
 	     "password":pass
