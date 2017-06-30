@@ -82,11 +82,11 @@ else{
   app.get('/profile/:name',function(req,res){
 
 	var a=req.params.name;
-db.find({username:a,email:b},function(err,result){
+db.find({username:a},function(err,result){
 
 	console.log(result);
 if(result.length!=0){
-	res.render('/profile',{res:result})
+	res.render('profile',{res:result})
                     }
 else{
 	res.send('no user found with'+a)
