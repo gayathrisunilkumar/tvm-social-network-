@@ -6,7 +6,7 @@ const app = express()
 var Datastore=require('nedb')
 var db=new Datastore({filename:'store.db',autoload:true});
 
-/* 30th */app.set('port',process.env.port||5000)
+app.set('port',process.env.port||5000)
 
 app.set('view engine','ejs');
 
@@ -147,6 +147,9 @@ app.get('/home',function(req,res){
 
 })  */
 
-/* 30th */app.listen(app.get('port'), function () {
+
+
+
+app.listen(app.get('port'), function () {
   console.log('Example app listening on port 3000!')
 })
