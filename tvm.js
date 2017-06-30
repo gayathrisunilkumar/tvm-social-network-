@@ -6,7 +6,7 @@ const app = express()
 var Datastore=require('nedb')
 var db=new Datastore({filename:'store.db',autoload:true});
 
-app.set('port',process.env.port||5000)
+app.set('port',process.env.PORT||5000)
 
 app.set('view engine','ejs');
 
