@@ -82,7 +82,7 @@ else{
   app.get('/profile/:name',function(req,res){
 
 	var a=req.params.name;
-db.find({username:a},function(err,result){
+db.find({user_name:a},function(err,result){
 
 	console.log(result);
 if(result.length!=0){
@@ -99,7 +99,7 @@ else{
 
 
 //lets see upto this
-
+ 
 
 
 
