@@ -36,7 +36,7 @@
    
        <div class="navbar-collapse collapse">
            <ul class="nav navbar-nav navbar-right">
-		     <li class=""><a href="/profile/"> My Profile</a> </li>
+		     <li class=""><a href="/profile/<% res.name %>"> My Profile</a> </li>
 
 			
 					 </ul>
@@ -59,7 +59,7 @@
             <img src="http://placehold.it/500x250/EEE">
               <div class="caption">
                 
-                <p>Email :<% res[i].email %> </p>
+                <p>Email :<% res[i].email %><br><%= res[i].username %> %> </p>
                
             </div>
           </div>

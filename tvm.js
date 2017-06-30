@@ -79,6 +79,23 @@ else{
 //lets see from here
 
 
+  app.get('/profile/:name',function(req,res){
+
+	var a=req.params.name;
+db.find({username:a},function(err,result){
+
+	console.log(result);
+if(result.length!=0){
+	res.render('profile',{res:result})
+                    }
+else{
+	res.send('no user found with'+a)
+}
+})
+})  
+
+
+
 
 
 //lets see upto this
@@ -160,20 +177,6 @@ app.get('/home',function(req,res){
 })  */
 
 
-/*  app.get('/profile/:name',function(req,res){
-
-	req.params.name;
-db.find({username:a},function(err,result){
-
-	console.log(result);
-if(result.length!=0){
-	res.render('userProfile',{result:result});
-                    }
-else{
-	res.send('no user found with'+a)
-}
-})
-})  */
 
 
 
