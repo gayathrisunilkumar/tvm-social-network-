@@ -148,7 +148,7 @@ app.get('/signupSubmit',function(req,res)
 /* insert to database */
 db.insert(perso,function(err,result){
 
-	console.log(result);
+	// console.log(result);
 	res.send("success inserted");
                                     })
 
@@ -156,7 +156,6 @@ db.insert(perso,function(err,result){
 
 
 
-	res.send("signup success");
 	
 
 }) 
