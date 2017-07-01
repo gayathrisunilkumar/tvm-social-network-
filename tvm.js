@@ -4,7 +4,7 @@ const app = express()
 
 /* for db */
 var Datastore=require('nedb')
-var db=new Datastore({filename:'store.db',autoload:true});
+var db=new Datastore({filename:'store1.db',autoload:true});
 
 app.set('port',process.env.PORT||5000)
 
@@ -81,7 +81,20 @@ else{
 //lets see from here
 
 
- 
+  app.get('/profile/:name',function(req,res){
+
+	var a=req.params.name;
+db.find({user_name:a},function(err,result){
+
+	console.log(result);
+if(result.length!=0){
+	res.render('profile',{res:result})
+                    }
+else{
+	res.send('no user found with'+a)
+}
+})
+})  
 
 
 
@@ -145,20 +158,6 @@ db.insert(perso,function(err,result){
 
 	res.send("signup success");
 	
-	 app.get('/profile/:name',function(req,res){
-
-	var a=req.params.name;
-db.find({user_name:a},function(err,result){
-
-	console.log(result);
-if(result.length!=0){
-	res.render('profile',{res:result})
-                    }
-else{
-	res.send('no user found with'+a)
-}
-})
-})  
 
 }) 
 
