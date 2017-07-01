@@ -81,42 +81,12 @@ else{
 //lets see from here
 
 
-  app.get('/profile/:name',function(req,res){
-
-	var a=req.params.name;
-db.find({user_name:a},function(err,result){
-
-	console.log(result);
-if(result.length!=0){
-	res.render('profile',{res:result})
-                    }
-else{
-	res.send('no user found with'+a)
-}
-})
-})  
-
-
-
-
-
-//lets see upto this
  
 
-
-
-
-
 })
 
 
 
-/*creating route */
-
-
-
-
-/* insert to database */
 
 
 
@@ -178,10 +148,27 @@ app.get('/home',function(req,res){
 })  */
 
 
+app.get('/profile/:name',function(req,res){
+
+	var a=req.params.name;
+db.find({user_name:a},function(err,result){
+
+	console.log(result);
+if(result.length!=0){
+	res.render('profile',{res:result})
+                    }
+else{
+	res.send('no user found with'+a)
+    }
+})
+})  
+
+
+
 
 
 
 
 app.listen(app.get('port'), function () {
-  console.log('Example app listening on port 3000!')
+  console.log('Example app listening on port 5000!')
 })
